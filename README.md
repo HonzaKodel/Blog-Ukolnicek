@@ -1,4 +1,5 @@
-Téma: Úkolníček (Vue.js, bootstrap, zurb, font awesoome, yarn)
+***Téma: 
+**Úkolníček (Vue.js, bootstrap, zurb, font awesoome, yarn)
 
 1. Založit si projekt na GitHubu
 2. Nasdílet projekt
