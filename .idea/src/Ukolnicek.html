@@ -38,7 +38,7 @@
             <div class="top-bar-left">
                 <ul class="menu">
                     <li class="fas fa-check-square"></li>
-                    <li class="menu-text">Úkolníček<i class="far fa-copyright"></i></li>
+                    <li class="menu-text">Úkolníček <i class="far fa-copyright"></i></li>
                 </ul>
             </div>
         </div>
@@ -73,34 +73,36 @@
 
             <div class="tabs-content" data-tabs-content="example-tabs">
                 <div class="tabs-panel is-active" id="panel1">
-                    <form>
+                    <form method="get" target="_blank">
                         <div class="row">
                             <div class="columns large-4">
-                                <label>Nový úkol</label>
-                                <input type="text" placeholder="Sem napište nový úkol/připomenutí...">
+                                <label for="ukol">Nový úkol</label>
+                                <input id="ukol" type="text" name="ukol" placeholder="Sem napište nový úkol/připomenutí...">
                             </div>
 
                             <div class="columns large-2">
-                                <label>Datum dokončení</label>
-                                <input type="date"></input>
+                                <label for="datum">Datum dokončení</label>
+                                <input id="datum" name="datum" type="date">
                             </div>
                             <div class="columns large-2">
-                                <label>Kategorie</label>
-                                <select>
+                                <label for="kategorie">Kategorie</label>
+
+                                <select id="kategorie" name="kategorie">
                                     <option value="school">Škola</option>
                                     <option value="work">Zaměstnání</option>
                                     <option value="home">Domácnost</option>
                                     <option value="other">Jiné</option>
                                 </select>
+
                             </div>
 
                             <div class="columns large-4">
-                                <label>Poznámka</label>
-                                <textarea placeholder="Sem napište bližší informace k úkolu"></textarea>
+                                <label for="poznamka">Poznámka</label>
+                                <textarea id="poznamka" name="poznamka" placeholder="Sem napište bližší informace k úkolu"></textarea>
                             </div>
                         </div>
                         <div class="row">
-                            <button type="submit" class="button expanded">Přidat nový úkol! <i class="fas fa-plus"></i>
+                            <button type="submit" id="submit-form" class="button expanded">Přidat nový úkol! <i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </form>
