@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Font Awesome-->
+    <script src="https://kit.fontawesome.com/95360e6bec.js" crossorigin="anonymous"></script>
+    <!-- Zurb Foundation -->
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+
+    <style>
+        body {
+  padding: 2rem 1rem;
+}
+
+    </style>
+
+
+</head>
+<body>
+
+    <div id="header">
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <ul class="menu">
+                    <li class="fas fa-check-square"></li>
+                    <li class="menu-text">Úkolníček<i class="far fa-copyright"></i></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="columns">
+            <ul class="tabs" data-active-collapse="true" data-tabs id="example-tabs">
+                <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Přidávání nových úkolů</a></li>
+                <li class="tabs-title"><a href="#panel2">Uzavřené úkoly</a></li>
+                <li class="tabs-title"><a href="#panel3">Nadcházející úkoly</a></li>
+            </ul>
+            </div>
+        </div>
+
+
+        <div class="callout large primary">
+            <div class="row">
+                <div class="columns small-3">
+                    <h1>Úkolníček</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns large-4">
+                    <h4 class="subheader">Pro každou příležitost</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns large-4">
+                    <h6 class="subheader" style="padding-top: 10px">-By Hanz corporated
+                        <i class="far fa-registered"></i></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs-content" data-tabs-content="example-tabs">
+        <div class="tabs-panel is-active" id="panel1">
+            <form>
+                <div class="row">
+                    <div class="columns large-4">
+                        <label>Nový úkol</label>
+                        <input type="text" placeholder="Sem napište nový úkol/připomenutí...">
+                    </div>
+
+                    <div class="columns large-2">
+                        <label>Datum dokončení</label>
+                        <input type="date">
+                    </div>
+                    <div class="columns large-2">
+                        <label>Kategorie</label>
+                        <select>
+                            <option value="school">Škola</option>
+                            <option value="work">Zaměstnání</option>
+                            <option value="home">Domácnost</option>
+                            <option value="other">Jiné</option>
+                        </select>
+                    </div>
+
+                    <div class="columns large-4">
+                        <label>Poznámka</label>
+                        <textarea placeholder="Sem napište bližší informace k úkolu"></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <button type="submit" class="button expanded">Přidat nový úkol! <i class="fas fa-plus"></i></button>
+                </div>
+            </form>
+        </div>
+
+        <div class="tabs-panel" id="panel2">
+            <h1>TOHLE BUDOU UZAVRENE UKOLY!</h1>
+        </div>
+
+        <div class="tabs-panel" id="panel3">
+            <h1>TOHLE BUDOU NADCHAZEJICI UKOLY!</h1>
+        </div>
+    </div>
+
+
+<!-- Optional JavaScript -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+
+<script>
+      $(document).foundation();
+
+</script>
+
+</body>
+</html>
