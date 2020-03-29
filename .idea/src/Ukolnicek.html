@@ -20,21 +20,15 @@
     <link rel="stylesheet" href="css/foundation.css" />
 
     <title>Hello, world!</title>
-
     <style>
-        body {
-  padding: 2rem 1rem;
-}
-
 
     </style>
 
-
 </head>
 <body>
-<div class="container">
+<div class="container" >
     <div id="header">
-        <div class="top-bar">
+        <div class="top-bar" >
             <div class="top-bar-left">
                 <ul class="menu">
                     <li class="fas fa-check-square"></li>
@@ -43,7 +37,7 @@
             </div>
         </div>
 
-        <div class="callout large primary">
+        <div class="callout large primary" style="border-radius: 7px; background-color: grey">
             <div class="row">
                 <div class="columns small-3">
                     <h1>Úkolníček</h1>
@@ -51,12 +45,12 @@
             </div>
             <div class="row">
                 <div class="columns large-4">
-                    <h4 class="subheader">Pro každou příležitost</h4>
+                    <h4 class="subheader" style="color: black">Pro každou příležitost</h4>
                 </div>
             </div>
             <div class="row">
                 <div class="columns large-4">
-                    <h6 class="subheader" style="padding-top: 10px">-By Hanz corporated
+                    <h6 class="subheader" style="color:black; padding: 7px">-By Hanz corporated
                         <i class="far fa-registered"></i></h6>
                 </div>
             </div>
@@ -67,20 +61,17 @@
         <div class="columns">
             <ul class="tabs" data-tabs id="example-tabs">
                 <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Přidávání nových úkolů</a></li>
-                <li class="tabs-title"><a data-tabs-target="#panel2">Uzavřené úkoly</a></li>
-                <li class="tabs-title"><a data-tabs-target="#panel3">Nadcházející úkoly</a></li>
             </ul>
-
-            <div class="tabs-content" data-tabs-content="example-tabs">
+<fieldset class="fieldset">
                 <div class="tabs-panel is-active" id="panel1">
-                    <form method="get" target="_blank">
+                    <form id="formik">
                         <div class="row">
-                            <div class="columns large-4">
+                            <div class="columns large-3">
                                 <label for="ukol">Nový úkol</label>
-                                <input id="ukol" type="text" name="ukol" placeholder="Sem napište nový úkol/připomenutí...">
+                                <input id="ukol" type="text" name="ukol" placeholder="Sem napište nový úkol...">
                             </div>
 
-                            <div class="columns large-2">
+                            <div class="columns small-3">
                                 <label for="datum">Datum dokončení</label>
                                 <input id="datum" name="datum" type="date">
                             </div>
@@ -102,24 +93,22 @@
                             </div>
                         </div>
                         <div class="row">
-                            <button type="submit" id="submit-form" class="button expanded">Přidat nový úkol! <i class="fas fa-plus"></i>
+                            <button type="button" id="submit-form" class="button expanded">Přidat nový úkol! <i class="fas fa-plus"></i>
                             </button>
+                        </div>
+                        <div id="msg">
+                            <pre></pre>
                         </div>
                     </form>
                 </div>
-
-                <div class="tabs-panel" id="panel2">
-                    <h1>TOHLE BUDOU UZAVRENE UKOLY!</h1>
-                </div>
-
-                <div class="tabs-panel" id="panel3">
-                    <h1>TOHLE BUDOU NADCHAZEJICI UKOLY!</h1>
-                </div>
+                </fieldset>
             </div>
         </div>
     </div>
 
-</div>
+
+
+
 
 <!-- Optional JavaScript -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -128,7 +117,6 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
@@ -139,6 +127,35 @@
 
 <script>
       $(document).foundation();
+
+      let tasks = [];
+
+      const addTask = (ev)=>{
+      ev.preventDefault();
+      let task = {
+        id: Date.now(),
+        title: document.getElementById('ukol').value,
+        datum: document.getElementById('datum').value,
+        kategorie: document.getElementById('kategorie').value,
+        poznamka: document.getElementById('poznamka').value
+      }
+
+      tasks.push(task);
+      document.forms[0].reset();
+
+      console.warn('added' , {tasks} );
+      let pre = document.querySelector('#msg pre');
+      pre.textContent = '\n' + JSON.stringify(tasks, '\t', 2);
+
+      localStorage.setItem('MyMovieList', JSON.stringify(tasks) );
+
+      }
+
+
+
+   document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById('submit-form').addEventListener('click', addTask);
+        });
 </script>
 
 </body>
