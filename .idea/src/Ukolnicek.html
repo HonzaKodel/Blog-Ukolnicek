@@ -144,18 +144,24 @@
       document.forms[0].reset();
 
       console.warn('added' , {tasks} );
-      let pre = document.querySelector('#msg pre');
-      pre.textContent = '\n' + JSON.stringify(tasks, '\t', 2);
 
       localStorage.setItem('MyTaskList', JSON.stringify(tasks) );
 
       }
 
-
-
    document.addEventListener('DOMContentLoaded', ()=>{
             document.getElementById('submit-form').addEventListener('click', addTask);
-        });
+            var newTask = document.createElement("div");
+            newTask.setAttribute("class", "row template");
+
+            var retrievedData = localStorage.getItem("MyTaskList");
+            var data = JSON.parse(retrievedData);
+
+            newTask.append(tasks);
+
+             var element = document.getElementById("f1");
+            element.appendChild(newTask);
+        });;
 </script>
 
 </body>
