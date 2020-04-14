@@ -21,6 +21,13 @@
 
     <title>Hello, world!</title>
     <style>
+        .template{
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px;
+            background-color: #999999;
+        }
 
     </style>
 
@@ -50,8 +57,7 @@
             </div>
             <div class="row">
                 <div class="columns large-4">
-                    <h6 class="subheader" style="color:black; padding: 7px">-By Hanz corporated
-                        <i class="far fa-registered"></i></h6>
+                    <h6 class="subheader" style="color:black; padding: 7px"></h6>
                 </div>
             </div>
         </div>
@@ -62,7 +68,7 @@
             <ul class="tabs" data-tabs id="example-tabs">
                 <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Přidávání nových úkolů</a></li>
             </ul>
-<fieldset class="fieldset">
+            <fieldset class="fieldset" id="f1">
                 <div class="tabs-panel is-active" id="panel1">
                     <form id="formik">
                         <div class="row">
@@ -93,7 +99,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <button type="button" id="submit-form" class="button expanded">Přidat nový úkol! <i class="fas fa-plus"></i>
+                            <button type="button"  id="submit-form" class="button expanded">Přidat nový úkol! <i class="fas fa-plus"></i>
                             </button>
                         </div>
                         <div id="msg">
@@ -101,10 +107,10 @@
                         </div>
                     </form>
                 </div>
-                </fieldset>
-            </div>
+            </fieldset>
         </div>
     </div>
+</div>
 
 
 
@@ -121,9 +127,6 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-<script src="js/vendor/jquery.js"></script>
-<script src="js/vendor/what-input.js"></script>
-<script src="js/vendor/foundation.min.js"></script>
 
 <script>
       $(document).foundation();
@@ -151,17 +154,24 @@
 
    document.addEventListener('DOMContentLoaded', ()=>{
             document.getElementById('submit-form').addEventListener('click', addTask);
+             });
+
+             $("#submit-form").click(function() {
             var newTask = document.createElement("div");
             newTask.setAttribute("class", "row template");
 
             var retrievedData = localStorage.getItem("MyTaskList");
             var data = JSON.parse(retrievedData);
 
-            newTask.append(tasks);
+            newTask.append(retrievedData);
 
              var element = document.getElementById("f1");
             element.appendChild(newTask);
-        });;
+});
+
+
+
+
 </script>
 
 </body>
